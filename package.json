@@ -1,0 +1,38 @@
+{
+  "name": "codelint-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+    "postinstall": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifei-coco/codelint-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifei-coco/codelint-study/issues"
+  },
+  "homepage": "https://github.com/lifei-coco/codelint-study#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "eslint": "^8.31.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "git add"
+    ],
+    "**/*.{js,jsx,tsx,ts,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
